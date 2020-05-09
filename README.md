@@ -59,7 +59,9 @@
 
 ## Basic script for auto-scaling group
 
-<hash_char>!/bin/bash
+```bash
+#!/bin/bash
 cd /home/ec2-user/pizza-luvrs
 echo "starting pizza luvrs"
 npm start
+```
