@@ -85,3 +85,7 @@ If installed with brew on MacOS, qualify commands with `/usr/local/bin/`, e.g. `
 1. Produce a message from command line: `kafka-console-producer --broker-list localhost:9092 --topic my_topic`
 1. Consumer messages from command line: `kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning`
 1. Get topic details (e.g. partition count, replication factor, leader, replicas): `kafka-topics --describe --topic my_topic --zookeeper localhost:2181`
+
+# Misc
+
+1. Delete node_modules recursively on Mac: `find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;`
