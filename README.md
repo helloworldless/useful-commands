@@ -78,3 +78,4 @@ npm start
     1. `nc -vz localhost 2181`
 1. Create Topic
     1. `kafka-topics --create --topic my_topic --zookeeper localhost:2181 --replication-factor 1 --partitions 1`
+1. Logs Location: `/usr/local/var/lib/kafka-logs/`
