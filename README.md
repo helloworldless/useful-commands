@@ -69,6 +69,8 @@ npm start
 
 # Kafka
 
+If installed with brew on MacOS, qualify commands with `/usr/local/bin/`, e.g. `/usr/local/bin/kafka-topics`
+
 1. Start Zookeeper
     1. `zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties`
 1. Start Kafka
@@ -79,5 +81,6 @@ npm start
 1. Create Topic
     1. `kafka-topics --create --topic my_topic --zookeeper localhost:2181 --replication-factor 1 --partitions 1`
 1. Logs Location: `/usr/local/var/lib/kafka-logs/`
-1. List Topics: `/usr/local/bin/kafka-topics --list --zookeeper localhost:2181`
+1. List Topics: `kafka-topics --list --zookeeper localhost:2181`
 1. Produce a message from command line: `kafka-console-producer --broker-list localhost:9092 --topic my_topic`
+1. Consumer messages from command line: `kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning`
