@@ -54,16 +54,25 @@
 ||sudo yum install -y nodejs||||
 ||ab -n 100 -c 5 http://pizza-load-balancer-1476197772.us-east-1.elb.amazonaws.com/||||
 
-1. CloudFormation Deploy Example
+## CloudFormation
+
+1. Deploy Example
     1. `aws cloudformation deploy --template-file ./hbfl.start.template --stack-name hbfl-stack --parameter-overrides ImageIdParameter=ami-0323c3dd2da7fb37d VPCIdParameter=vpc-0a358a64ae71dc0eb SubnetListParameter=subnet-0fd30ed5b383a78fb,subnet-043f91637234fc4bf --capabilities CAPABILITY_IAM`
     1. Note that re-running `aws cloudformat deploy` can be used for updates; It will use 
     all the previous parameters and you can add overrides as needed
-1. CloudFormation Deploy Dry Run
+1. Deploy Dry Run
     1. `aws cloudformation deploy ... --no-execute-changeset`
     1. The output of this command will include the command to inspec the changeset:
     `aws cloudformation describe-change-set --change-set-name <cloudformation_changeset_arn>`
-1. CloudFormation Execute Changeset
+1. Execute Changeset
     1. aws cloudformation execute-change-set --change-set-name <cloudformation_changeset_arn>
+
+## Elastic Beanstalk
+
+1. `brew install awsebcli`
+1. `eb init`
+1. `eb create`
+1. `eb updated`
 
 # More
 
