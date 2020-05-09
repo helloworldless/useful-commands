@@ -80,3 +80,4 @@ npm start
     1. `kafka-topics --create --topic my_topic --zookeeper localhost:2181 --replication-factor 1 --partitions 1`
 1. Logs Location: `/usr/local/var/lib/kafka-logs/`
 1. List Topics: `/usr/local/bin/kafka-topics --list --zookeeper localhost:2181`
+1. Produce a message from command line: `kafka-console-producer --broker-list localhost:9092 --topic my_topic`
