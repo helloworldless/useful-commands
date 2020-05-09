@@ -70,9 +70,9 @@ npm start
 # Kafka
 
 1. Start Zookeeper
-  1. `zookeeper-server-start /usr/local/etc/kafka/zookeeper.propertie`
+    1. `zookeeper-server-start /usr/local/etc/kafka/zookeeper.propertie`
 1. Start Kafka
-  1. `kafka-server-start /usr/local/etc/kafka/server.properties`
+    1. `kafka-server-start /usr/local/etc/kafka/server.properties`
 1. Test Zookeeper connection
-  1. `telnet localhost 2181`
-  1. `nc -vz localhost 2181`
+    1. `telnet localhost 2181`
+    1. `nc -vz localhost 2181`
