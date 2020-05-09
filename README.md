@@ -39,3 +39,27 @@
 | curl http://localhost:8080/task/add -H "Content-Type: application/json" -d '{"first": 4, "second": 5}'                                                                                             |
 | curl -X PUT http://localhost:8080/task/add -H "Content-Type: application/json" -d '{"first": 4, "second": 5}'                                                                                      |
 | maven-local-install() { mvn install:install-file -Dfile=$PWD/target/$1-$2.jar -DgroupId=com.davidagood -DartifactId=$1 -Dversion=$2 -Dpackaging=jar  cp pom.xml ~/.m2/repository/$1/$2/$1-$2.pom } |
+
+
+# AWS
+
+|Description|Command|Alt|Refernece|Commments|
+|-----------|-------|---|---------|---------|
+||chmod 400 ~/Downloads/pizza-keys.pem||||
+||ssh -i ~/Downloads/pizza-keys.pem ec2-user@<ip_address>||||
+||scp -r -i ~/Downloads/pizza-keys.pem ./pizza-luvrs ec2-user@<ip_address>:/home/ec2-user/pizza-luvrs|||Remove destination folder name to overwrite existing contents at that location|
+||sudo yum update||||
+||curl -sL https://deb.nodesource.com/setup_12.x | bash -|curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -|||
+||sudo yum install -y nodejs||||
+||sudo yum install -y nodejs||||
+||ab -n 100 -c 5 http://pizza-load-balancer-1476197772.us-east-1.elb.amazonaws.com/||||
+
+
+# More
+
+## Basic script for auto-scaling group
+
+<hash_char>!/bin/bash
+cd /home/ec2-user/pizza-luvrs
+echo "starting pizza luvrs"
+npm start
