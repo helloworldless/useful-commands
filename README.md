@@ -55,7 +55,7 @@
 ||ab -n 100 -c 5 http://pizza-load-balancer-1476197772.us-east-1.elb.amazonaws.com/||||
 
 1. CloudFormation Example
-    1. `aws cloudformation deploy --template-file ./hbfl.start.template --stack-name hbfl-stack --parameter-overrides ImageIdParameter=ami-0323c3dd2da7fb37d VPCIdParameter=vpc-0a358a64ae71dc0eb SubnetListParameter=subnet-0fd30ed5b383a78fb,subnet-043f91637234fc4bf`
+    1. `aws cloudformation deploy --template-file ./hbfl.start.template --stack-name hbfl-stack --parameter-overrides ImageIdParameter=ami-0323c3dd2da7fb37d VPCIdParameter=vpc-0a358a64ae71dc0eb SubnetListParameter=subnet-0fd30ed5b383a78fb,subnet-043f91637234fc4bf --capabilities CAPABILITY_IAM`
 
 # More
 
