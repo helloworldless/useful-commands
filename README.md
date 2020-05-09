@@ -61,7 +61,9 @@
 1. CloudFormation Deploy Dry Run
     1. `aws cloudformation deploy ... --no-execute-changeset`
     1. The output of this command will include the command to inspec the changeset:
-    `aws cloudformation describe-change-set --change-set-name <cloudformation_arn>`
+    `aws cloudformation describe-change-set --change-set-name <cloudformation_changeset_arn>`
+1. CloudFormation Execute Changeset
+    1. aws cloudformation execute-change-set --change-set-name <cloudformation_changeset_arn>
 
 # More
 
