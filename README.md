@@ -104,6 +104,13 @@ If installed with brew on MacOS, qualify commands with `/usr/local/bin/`, e.g. `
 1. Produce a message from command line: `kafka-console-producer --broker-list localhost:9092 --topic my_topic`
 1. Consumer messages from command line: `kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning`
 1. Get topic details (e.g. partition count, replication factor, leader, replicas): `kafka-topics --describe --topic my_topic --zookeeper localhost:2181`
+1. Running multiple brokers on one machine:
+    1. https://www.michael-noll.com/blog/2013/03/13/running-a-multi-broker-apache-kafka-cluster-on-a-single-node/
+    1. In summary, create copies of the `server.properties` file and give unique values to
+        1. `broker.id`
+        1. `listeners`
+        1. `log.dirs`
+    1. Then run `kafka-server-start` pointing to the modified `server.properties` file
 
 # Misc
 
