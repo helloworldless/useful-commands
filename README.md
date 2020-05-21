@@ -74,6 +74,27 @@
 1. `eb create`
 1. `eb updated`
 
+## IAM
+
+### Assume Role Policy
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sts:AssumeRole"
+            ],
+            "Resource": [
+                "<role_arn>"
+            ]
+        }
+    ]
+}
+```
+
 # More
 
 ## Basic script for auto-scaling group
@@ -114,4 +135,18 @@ If installed with brew on MacOS, qualify commands with `/usr/local/bin/`, e.g. `
 
 # Misc
 
-1. Delete node_modules recursively on Mac: `find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;`
+## Delete node_modules recursively on Mac
+
+`find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;`
+
+## Proxy A Command And Run Arbitrary Commands First 
+
+```bash
+#!/bin/bash
+set -e
+
+# Add initialisation logic here
+
+# Run application
+exec "$@"
+```
