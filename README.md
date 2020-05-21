@@ -95,6 +95,10 @@
 }
 ```
 
+#### Improving AWS Force MFA Policy for IAM Users
+
+https://www.trek10.com/blog/improving-the-aws-force-mfa-policy-for-iam-users
+
 # More
 
 ## Basic script for auto-scaling group
