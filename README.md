@@ -128,6 +128,15 @@ aws_secret_access_key = <key>
 Then to use the profile, `export AWS_PROFILE=microtrader-admin`. When you run a command 
 it should prompt you for an MFA token.
 
+## ECS and ECR
+
+## Connect Docker Client to ECR and Pusing an Image and Tag
+
+1. `aws ecr get-login --no-include-email --region us-east-1`
+1. Run the resulting command or just run it in an `eval $()` 
+1. `docker build -t dockerproductionaws/microtrader-base .`
+1. `docker tag dockerproductionaws/microtrader-base:latest <aws_ecr_url>/dockerproductionaws/microtrader-base:latest`
+1. `docker push <aws_ecr_url>/dockerproductionaws/microtrader-base:latest`
 
 ## More
 
