@@ -142,6 +142,7 @@ it should prompt you for an MFA token.
 
 1. ECS agent log location: `var/log/ecs`
 1. ECS agent introspection endpoint: `curl -s localhost:51678/v1/metadata | jq`
+1. ECS agent tasks endpoint: `curl -s localhost:51678/v1/tasks | jq`
 
 ## More
 
