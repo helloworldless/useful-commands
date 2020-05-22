@@ -149,6 +149,11 @@ echo "starting pizza luvrs"
 npm start
 ```
 
+# Docker
+
+## Inspect Container Host Bind Mounts
+
+`docker inspect -f '{{json .HostConfig.Binds}}' ecs-agent | jq`
 
 # Kafka
 
