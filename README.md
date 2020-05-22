@@ -95,11 +95,41 @@
 }
 ```
 
-#### Improving AWS Force MFA Policy for IAM Users
+### Improving AWS Force MFA Policy for IAM Users
 
 https://www.trek10.com/blog/improving-the-aws-force-mfa-policy-for-iam-users
 
-# More
+### AWS CLI Config
+
+~/.aws/config
+```text
+[default]
+region = us-east-1
+output = json
+
+[profile microtrader-admin]
+source_profile = microtrader
+role_arn = <arn_of_role_to_assume>
+region = us-east-1
+mfa_serial = <iam_user_mfa_device_arn>
+```
+
+~/.aws/credentials
+```text
+[default]
+aws_access_key_id = <id>
+aws_secret_access_key = <key>
+
+[microtrader]
+aws_access_key_id = <id>
+aws_secret_access_key = <key>
+```
+
+Then to use the profile, `export AWS_PROFILE=microtrader-admin`. When you run a command 
+it should prompt you for an MFA token.
+
+
+## More
 
 ## Basic script for auto-scaling group
 
