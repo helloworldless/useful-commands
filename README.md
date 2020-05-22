@@ -130,13 +130,18 @@ it should prompt you for an MFA token.
 
 ## ECS and ECR
 
-## Connect Docker Client to ECR and Pusing an Image and Tag
+### Connect Docker Client to ECR and Pusing an Image and Tag
 
 1. `aws ecr get-login --no-include-email --region us-east-1`
 1. Run the resulting command or just run it in an `eval $()` 
 1. `docker build -t dockerproductionaws/microtrader-base .`
 1. `docker tag dockerproductionaws/microtrader-base:latest <aws_ecr_url>/dockerproductionaws/microtrader-base:latest`
 1. `docker push <aws_ecr_url>/dockerproductionaws/microtrader-base:latest`
+
+### ECS Agent Debugging
+
+1. ECS agent log location: `var/log/ecs`
+1. ECS agent introspection endpoint: `curl -s localhost:51678/v1/metadata | jq`
 
 ## More
 
