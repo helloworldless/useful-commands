@@ -49,7 +49,7 @@
 ||ssh -i ~/Downloads/pizza-keys.pem ec2-user@<ip_address>||||
 ||scp -r -i ~/Downloads/pizza-keys.pem ./pizza-luvrs ec2-user@<ip_address>:/home/ec2-user/pizza-luvrs|||Remove destination folder name to overwrite existing contents at that location|
 ||sudo yum update||||
-||curl -sL https://deb.nodesource.com/setup_12.x &#124; bash -|curl -sL https://deb.nodesource.com/setup_12.x &#124; sudo -E bash -|||
+||curl -sL https://deb.nodesource.com/setup_12.x &#124; bash -|curl -sL https://rpm.nodesource.com/setup_12.x &#124; sudo -E bash -|||
 ||sudo yum install -y nodejs||||
 ||sudo yum install -y nodejs||||
 ||ab -n 100 -c 5 http://pizza-load-balancer-1476197772.us-east-1.elb.amazonaws.com/||||
