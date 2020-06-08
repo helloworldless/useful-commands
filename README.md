@@ -206,3 +206,7 @@ set -e
 # Run application
 exec "$@"
 ```
+
+## Zip Specific Files/Directories in Windows (PowerShell)
+
+`Compress-Archive -LiteralPath node_modules, index.js -DestinationPath yourfilename.zip`
