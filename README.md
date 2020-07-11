@@ -167,7 +167,7 @@ npm start
 
 See notes about setting environment variables [here](https://github.com/docker-library/docs/blob/master/postgres/README.md#environment-variables).
 
-Note that defaults are used when running on localhost. To override a default, add this to the `run` command: `-e POSTGRES_PASSWORD=secret`
+Note that defaults are used when running on `localhost`. Override a default in the `run` command like this: `-e POSTGRES_PASSWORD=secret`
 
 1. `docker run -d --name <name> -v <volume_name>:/var/lib/postgresql/data -p 5432:5432 postgres:latest`
 1. `docker logs -f <name>`
