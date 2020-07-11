@@ -170,6 +170,7 @@ See notes about setting environment variables [here](https://github.com/docker-l
 Note that defaults are used when running on `localhost`. Override a default in the `run` command like this: `-e POSTGRES_PASSWORD=secret`
 
 1. `docker run -d --name <name> -v <volume_name>:/var/lib/postgresql/data -p 5432:5432 postgres:latest`
+    1. Or with env overrides: `docker run -d --name <name> -e POSTGRES_USER=<user> -e POSTGRES_PASSWORD=<password> -e POSTGRES_DB=<database_name> -v <volume_name>:/var/lib/postgresql/data -p 5432:5432 postgres:latest`
 1. `docker logs -f <name>`
 1. `docker exec -it <name> psql -U postgres`
     1. `\l` to list databases
