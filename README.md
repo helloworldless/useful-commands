@@ -210,3 +210,15 @@ exec "$@"
 ## Zip Specific Files/Directories in Windows (PowerShell)
 
 `Compress-Archive -LiteralPath node_modules, index.js -DestinationPath yourfilename.zip`
+
+## Postgres Docker
+
+1. docker run -d --name <name> -v <volume_name>:/var/lib/postgresql/data -p 5432:5432 postgres:latest
+1. docker logs -f <name>
+1. docker exec -it <name> psql -U postgres
+    1. \l to list databases
+    1. CREATE DATABASE test;
+    1. \c test to change to test database
+    1. INSERT INTO relation(id, parentId, childId) VALUES (2, 2, 3);
+    1. INSERT INTO relation(id, parentId, childId, createdAt) VALUES (1, 1, 2, timezone('UTC'::text, now()));
+    1. SELECT * FROM relation;
