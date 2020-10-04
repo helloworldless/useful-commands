@@ -227,3 +227,19 @@ exec "$@"
 ## Zip Specific Files/Directories in Windows (PowerShell)
 
 `Compress-Archive -LiteralPath node_modules, index.js -DestinationPath yourfilename.zip`
+
+
+# Gralde
+
+1. Upgrade Gradle wrapper: `./gradlew wrapper --gradle-version 6.6.1`
+    1. Source: https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:upgrading_wrapper
+
+## Useful for Troubleshooting
+
+1. Print Java Source Files
+    1. `println "sourceSets.main.allSource.files: " + sourceSets.main.allSource.files`
+    1. Example output: `sourceSets.main.allSource.files: [/home/dgood/IdeaProjects/cdk-java-starter/lambda/src/main/resources/a.txt, /home/dgood/IdeaProjects/cdk-java-starter/lambda/src/main/java/com/davidagood/cdkjava/ExampleHandler.java]`
+1. Print all configurations
+    1. `println "configurations: " + configurations`
+    1. Example output: `configurations: [configuration ':lambda:annotationProcessor', configuration ':lambda:apiElements', configuration ':lambda:archives', configuration ':lambda:compile', configuration ':lambda:compileClasspath', configuration ':lambda:compileOnly', configuration ':lambda:default', configuration ':lambda:implementation', configuration ':lambda:lambdaResources', configuration ':lambda:outputAnnotationProcessor', configuration ':lambda:outputCompile', configuration ':lambda:outputCompileClasspath', configuration ':lambda:outputCompileOnly', configuration ':lambda:outputImplementation', configuration ':lambda:outputRuntime', configuration ':lambda:outputRuntimeClasspath', configuration ':lambda:outputRuntimeOnly', configuration ':lambda:runtime', configuration ':lambda:runtimeClasspath', configuration ':lambda:runtimeElements', configuration ':lambda:runtimeOnly', configuration ':lambda:testAnnotationProcessor', configuration ':lambda:testCompile', configuration ':lambda:testCompileClasspath', configuration ':lambda:testCompileOnly', configuration ':lambda:testImplementation', configuration ':lambda:testRuntime', configuration ':lambda:testRuntimeClasspath', configuration ':lambda:testRuntimeOnly']`
+    
