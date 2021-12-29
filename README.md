@@ -53,6 +53,14 @@
 ||sudo yum install -y nodejs||||
 ||ab -n 100 -c 5 http://pizza-load-balancer-1476197772.us-east-1.elb.amazonaws.com/||||
 
+## DynamoDB
+    
+### Create Basic Table (Single Table Design)
+    
+```shell
+aws dynamodb create-table --table-name MyTable --attribute-definitions AttributeName=PK,AttributeType=S AttributeName=SK,AttributeType=S --key-schema AttributeName=PK,KeyType=HASH AttributeName=SK,KeyType=RANGE --billing-mode PAY_PER_REQUEST --endpoint-url http://localhost:4566
+```
+    
 ## CloudFormation
 
 1. Deploy Example
@@ -106,6 +114,18 @@ https://www.trek10.com/blog/improving-the-aws-force-mfa-policy-for-iam-users
 region = us-east-1
 output = json
 
+[profile local]
+source_profile=default
+dynamodb_endpoint_url=http://localhost:8000
+
+[profile sso-stg]
+sso_start_url = https://d-<account-id>.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = <sso-account-id>
+sso_role_name = <role-name>
+region = us-east-1
+output = json
+    
 [profile microtrader-admin]
 source_profile = microtrader
 role_arn = <arn_of_role_to_assume>
@@ -118,6 +138,10 @@ mfa_serial = <iam_user_mfa_device_arn>
 [default]
 aws_access_key_id = <id>
 aws_secret_access_key = <key>
+    
+[local]
+aws_access_key_id = dummy
+aws_secret_access_key = dummy
 
 [microtrader]
 aws_access_key_id = <id>
