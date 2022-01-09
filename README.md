@@ -67,6 +67,69 @@ With Global Secondary Index (GSI):
 aws dynamodb create-table --table-name MyTable --attribute-definitions AttributeName=PK,AttributeType=S AttributeName=SK,AttributeType=S AttributeName=GSI1PK,AttributeType=S AttributeName=GSI1SK,AttributeType=S --key-schema AttributeName=PK,KeyType=HASH AttributeName=SK,KeyType=RANGE --global-secondary-indexes 'IndexName=GSI1,KeySchema=[{AttributeName=GSI1PK,KeyType=HASH},{AttributeName=GSI1SK,KeyType=RANGE}],Projection={ProjectionType=ALL}' --billing-mode PAY_PER_REQUEST --endpoint-url http://localhost:4566
 ```
     
+Using JSON file:
+    
+```
+aws dynamodb create-table --cli-input-json file://create-table.json --e
+ndpoint-url http://localhost:4566
+```
+
+create-table.json
+    
+```
+{
+    "TableName": "SingleTableDesign",
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "PK",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "SK",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "GSI1PK",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "GSI1SK",
+            "AttributeType": "S"
+        }
+    ],
+    "KeySchema": [
+        {
+            "AttributeName": "PK",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "SK",
+            "KeyType": "RANGE"
+        }
+    ],
+    "LocalSecondaryIndexes": [],
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "GSI1",
+            "KeySchema": [
+                {
+                    "AttributeName": "GSI1PK",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "GSI1SK",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            }
+        }
+    ],
+    "BillingMode": "PAY_PER_REQUEST"
+}
+```
+    
 ## CloudFormation
 
 1. Deploy Example
