@@ -132,6 +132,7 @@ create-table.json
     
 ### Working with Lists
     
+```
 aws dynamodb put-item --table-name python-test --item '{"PK": {"S": "List"}, "SK": {"S": "List"}, "Value": {"L": [{"S": "0"}]}}'
 
 aws dynamodb update-item --table-name python-test --key '{"PK": {"S": "List"}, "SK": {"S": "List"}}' --update-expression "SET #Value[0] = :value" --expression-attribute-names '{"#Value": "Value"}' --expression-attribute-values '{":value": {"S": "00" }}'
@@ -153,13 +154,16 @@ aws dynamodb update-item --table-name python-test --key '{"PK": {"S": "List"}, "
 aws dynamodb update-item --table-name python-test --key '{"PK": {"S": "List"}, "SK": {"S": "List"}}' --update-expression "SET #Value[0] = if_not_exists(#Value[0], :value)" --expression-attribute-names '{"#Value": "Value"}' --expression-attribute-values '{":value": {"S": "overwrite-0" }}'
 
 aws dynamodb update-item --table-name python-test --key '{"PK": {"S": "List"}, "SK": {"S": "List"}}' --update-expression "SET #Value[100] = if_not_exists(#Value[1000], :value)" --expression-attribute-names '{"#Value": "Value"}' --expression-attribute-values '{":value": {"S": "overwrite-?" }}'
+```
     
 ### Working with Sets
 
+```
 aws dynamodb put-item --table-name python-test --item '{"PK": {"S": "SET"}, "SK": {"S": "SET"}, "Value": {"SS": ["0"]}}'
 
 aws dynamodb update-item --table-name python-test --key '{"PK": {"S": "SET"}, "SK": {"S": "SET"}}' --update-expression "SET #Value = list_append(#Value, ":values")" --expression-attribute-names '{"#Value": "Value"}' --expression-attribute-values '{":values": {"SS": ["1"]}}'
-
+```
+    
 ## CloudFormation
 
 1. Deploy Example
