@@ -370,3 +370,10 @@ exec "$@"
     1. `println "configurations: " + configurations`
     1. Example output: `configurations: [configuration ':lambda:annotationProcessor', configuration ':lambda:apiElements', configuration ':lambda:archives', configuration ':lambda:compile', configuration ':lambda:compileClasspath', configuration ':lambda:compileOnly', configuration ':lambda:default', configuration ':lambda:implementation', configuration ':lambda:lambdaResources', configuration ':lambda:outputAnnotationProcessor', configuration ':lambda:outputCompile', configuration ':lambda:outputCompileClasspath', configuration ':lambda:outputCompileOnly', configuration ':lambda:outputImplementation', configuration ':lambda:outputRuntime', configuration ':lambda:outputRuntimeClasspath', configuration ':lambda:outputRuntimeOnly', configuration ':lambda:runtime', configuration ':lambda:runtimeClasspath', configuration ':lambda:runtimeElements', configuration ':lambda:runtimeOnly', configuration ':lambda:testAnnotationProcessor', configuration ':lambda:testCompile', configuration ':lambda:testCompileClasspath', configuration ':lambda:testCompileOnly', configuration ':lambda:testImplementation', configuration ':lambda:testRuntime', configuration ':lambda:testRuntimeClasspath', configuration ':lambda:testRuntimeOnly']`
     
+## Swagger API Docs Common Default Paths
+
+The deafult path has changed across implementations/versions and it's difficult to look up the historical or even current default path... Here are some common default paths for Swagger API docs:
+
+- `/swagger/index.html`
+- `swagger-ui/index.html`
+- `/swagger.html`
