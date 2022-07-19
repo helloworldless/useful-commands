@@ -375,5 +375,6 @@ exec "$@"
 The deafult path has changed across implementations/versions and it's difficult to look up the historical or even current default path... Here are some common default paths for Swagger API docs:
 
 - `/swagger/index.html`
-- `swagger-ui/index.html`
+- `/swagger-ui/index.html`
 - `/swagger.html`
+- `/swagger-ui.html`
